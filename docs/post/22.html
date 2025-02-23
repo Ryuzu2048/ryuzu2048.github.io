@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Ryuzu2048">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        /* 変数定義 */
+        // リダイレクト先URL
+        const URL = 'https://blog1.ryuzubin.com/2025/02/yamltab.html'
+        const cachebuster = '?unixtime=' + Math.floor(Date.now() / 1000) + '&unique=' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        const redirectUrl = URL + cachebuster;
+        // ms
+        const redirectTime = 3000;
+    </script>
+    <script>
+        // タイトル変更
+        document.title = redirectUrl + 'に移動します。';
+    </script>
+    <title></title>
+</head>
+
+<body>
+    <p>
+        本サイトは、<span id="redirectUrl"></span>に移動しました。
+    </p>
+    <p>
+        <span id="redirectTime"></span>秒後に自動的に移動します。
+    </p>
+    <p>
+        移動しない場合は、<button onclick="redirect()">こちら</button>をクリックしてください。
+    </p>
+    <script>
+        // リダイレクト先表示
+        document.getElementById('redirectUrl').textContent = redirectUrl;
+        // カウントダウン表示
+        let count = redirectTime / 1000;
+        document.getElementById('redirectTime').textContent = count;
+        setInterval(() => {
+            count--;
+            document.getElementById('redirectTime').textContent = count;
+            if (count < 0) {
+                confirm(`自動遷移に失敗しました。\n${redirectUrl}に移動しますか？`) ? redirect() : window
+            }
+        }, 1000);
+        // リダイレクト関数（新規タブ）
+        function redirectblank() {
+            window.open(redirectUrl, '_blank', 'noopener', 'noreferrer');
+        }
+        // リダイレクト関数（同一タブ）
+        function redirect() {
+            window.location.href = redirectUrl;
+        }
+        // リダイレクト処理
+        setTimeout(() => {
+            redirect();
+        }, redirectTime);
+    </script>
+</body>
+
+</html>
