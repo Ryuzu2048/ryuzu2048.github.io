@@ -23,6 +23,8 @@
 </head>
 
 <body>
+    <h1>サイト移行のお知らせ</h1>
+    <h2>リダイレクト先</h2>
     <p>
         本サイトは、<span id="redirectUrl"></span>に移動しました。
     </p>
@@ -32,6 +34,20 @@
     <p>
         移動しない場合は、<button onclick="redirect()">こちら</button>をクリックしてください。
     </p>
+    <h2>プライバシーポリシー</h2>
+    <h3>アナリティクス</h3>
+    <div>
+        <h3>Google Analytics</h3>
+        <p>
+            当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を使用しています。このGoogleアナリティクスはデータの収集のためにCookieを使用しています。このデータは匿名で収集されており、個人を特定するものではありません。
+        </p>
+        <p>
+            この規約に関しての詳細は<a href="https://marketingplatform.google.com/about/analytics/terms/jp/" target="_blank"
+                rel="noopener noreferrer">Googleアナリティクスサービス利用規約</a>のページや<a
+                href="https://policies.google.com/technologies/ads?hl=ja" target="_blank"
+                rel="noopener noreferrer">Googleポリシーと規約</a>のページをご覧ください。
+        </p>
+    </div>
     <script>
         // リダイレクト先表示
         document.getElementById('redirectUrl').textContent = redirectUrl;
@@ -57,6 +73,15 @@
         setTimeout(() => {
             redirect();
         }, redirectTime);
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QS1FD3CMW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5QS1FD3CMW');
     </script>
 </body>
 
