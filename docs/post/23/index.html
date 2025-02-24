@@ -53,11 +53,18 @@
         document.getElementById('redirectUrl').textContent = redirectUrl;
         // カウントダウン表示
         let count = redirectTime / 1000;
+        let flag = false;
         document.getElementById('redirectTime').textContent = count;
         setInterval(() => {
-            count--;
+            if(flag == false){
+                count--;
+            }
+            else {
+                count = 0;
+            }
             document.getElementById('redirectTime').textContent = count;
-            if (count < 0) {
+            if (count < 0 && flag == false) {
+                flag = true;
                 confirm(`自動遷移に失敗しました。\n${redirectUrl}に移動しますか？`) ? redirect() : window
             }
         }, 1000);
