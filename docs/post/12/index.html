@@ -66,7 +66,7 @@
         setInterval(() => {
             count--;
             document.getElementById('redirectTime').textContent = count;
-            if (count < 0) {
+            if (count <= -1 && flag == false) {
                 confirm(`自動遷移に失敗しました。\n${redirectUrl}に移動しますか？`) ? redirect() : window
             }
         }, 1000);
