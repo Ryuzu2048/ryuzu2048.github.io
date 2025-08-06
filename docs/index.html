@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <title>ryuzu2048.github.io</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/img-protect.js"></script>
+    <meta name="description" content="Ryuzu2048`s GitHub Pages">
+    <meta name="author" content="Ryuzu2048">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QS1FD3CMW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5QS1FD3CMW');
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Ryuzu2048's GitHub Pages</h1>
+    </header>
+    <main>
+        <div style="text-align: center; margin-top: 50px;">
+            <img src="http://avatars.githubusercontent.com/Ryuzu2048" alt="Ryuzu2048 Avatar"
+                style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
+            <h2>Links</h2>
+            <ul>
+                <li><a href="https://github.com/Ryuzu2048" target="_blank"
+                        rel="noopener noreferrer">github.com/Ryuzu2048</a>
+                </li>
+                <li><a href="https://www.ryuzubin.com" target="_blank">Ryuzu2048`s Website</a></li>
+            </ul>
+            <h2>privacy policy</h2>
+            <h3>Google Analytics</h3>
+            <p>
+                当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を使用しています。
+                <br />
+                このGoogleアナリティクスはデータの収集のためにCookieを使用しています。
+                <br />
+                このデータは匿名で収集されており、個人を特定するものではありません。
+            </p>
+            <p>
+                この規約に関しての詳細は<a href="https://marketingplatform.google.com/about/analytics/terms/jp/" target="_blank"
+                    rel="noopener noreferrer">Googleアナリティクスサービス利用規約</a>のページや<a
+                    href="https://policies.google.com/technologies/ads?hl=ja" target="_blank"
+                    rel="noopener noreferrer">Googleポリシーと規約</a>のページをご覧ください。
+            </p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; <a href="https://github.com/Ryuzu2048" target="_blank" rel="noopener noreferrer">Ryuzu2048</a> 2025
+        </p>
+        <p>Last updated: <span id="last-updated"></span></p>
+    </footer>
+
+    <script>
+        // yyyy-MM-ddTHH:mm:ss
+        const lastUpdated = document.lastModified;
+        const formattedDate = new Date(lastUpdated).toLocaleString('ja-JP', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            timeZone: 'Asia/Tokyo'
+        });
+        document.getElementById('last-updated').textContent = formattedDate;
+    </script>
+</body>
+
+</html>
